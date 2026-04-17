@@ -1,0 +1,341 @@
+.letter-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px 15px;
+  overflow-x: hidden;
+}
+
+.letter-card {
+  padding: 30px 25px;
+  border-radius: 25px;
+  box-shadow: 0 20px 50px rgba(255, 105, 180, 0.3);
+  width: 100%;
+  max-width: 680px;
+  text-align: center;
+  border: 3px solid #ff69b4;
+  backdrop-filter: blur(12px);
+  margin: 20px 0 80px 0;
+  background: rgba(255, 255, 255, 0.98);
+}
+
+/* Title */
+.letter-title {
+  font-size: clamp(2.1rem, 7.5vw, 2.8rem);
+  color: #c71585;
+  margin: 10px 0 15px 0;
+  text-shadow: 0 0 15px rgba(255, 105, 180, 0.6);
+}
+
+/* Horizontal Timeline */
+.timeline-container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 45px 0;
+  padding: 0 12px;
+  gap: 12px;
+}
+
+.timeline-line {
+  position: absolute;
+  top: 26px;
+  left: 25px;
+  right: 25px;
+  height: 4px;
+  background: linear-gradient(to right, #ff69b4, #db7093, #ff1493);
+  border-radius: 2px;
+  box-shadow: 0 0 12px rgba(255, 105, 180, 0.7);
+}
+
+.timeline-item {
+  position: relative;
+  flex: 1;
+  transition: transform 0.4s ease;
+}
+
+.timeline-item:hover {
+  transform: translateY(-8px) scale(1.03);
+}
+
+.timeline-dot {
+  position: absolute;
+  top: 19px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 20px;
+  background: white;
+  border: 4.5px solid #ff1493;
+  border-radius: 50%;
+  box-shadow: 0 0 18px #ff69b4,
+              0 0 30px rgba(255, 20, 147, 0.6);
+  z-index: 2;
+}
+
+.timeline-content {
+  padding-top: 70px;
+  text-align: center;
+}
+
+.timeline-date {
+  font-size: clamp(0.95rem, 3.8vw, 1.1rem);
+  color: #c71585;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.timeline-emoji {
+  font-size: clamp(2.2rem, 8.5vw, 2.8rem);
+  margin: 8px 0 12px 0;
+  display: block;
+  animation: glowEmoji 2.5s ease-in-out infinite alternate;
+}
+
+.timeline-title {
+  font-size: clamp(1.15rem, 4.5vw, 1.35rem);
+  color: #4a4a4a;
+  margin: 8px 0 10px;
+  font-weight: 600;
+}
+
+.timeline-desc {
+  font-size: clamp(0.95rem, 3.8vw, 1.05rem);
+  color: #555;
+  line-height: 1.55;
+}
+
+/* Glow Animation */
+@keyframes glowEmoji {
+  from { text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff1493; }
+  to   { text-shadow: 0 0 20px #ff69b4, 0 0 40px #ff1493, 0 0 55px #db7093; }
+}
+
+.love-declaration {
+  font-size: clamp(1.9rem, 6.8vw, 2.4rem);
+  color: #c71585;
+  margin: 25px 0 30px;
+  text-shadow: 0 0 25px #ff69b4,
+               0 0 45px #ff1493;
+  animation: glowEmoji 3s ease-in-out infinite alternate;
+  line-height: 1.2;
+}
+
+.love-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Signature */
+.signature {
+  font-size: clamp(1.1rem, 4.2vw, 1.3rem);
+  color: #555;
+  margin-top: 35px;
+  font-style: italic;
+}
+
+/* Floating Hearts */
+.letter-card::before {
+  content: '💕';
+  position: absolute;
+  top: 12%;
+  left: 6%;
+  font-size: clamp(1.6rem, 5.5vw, 2rem);
+  opacity: 0.15;
+  animation: floatHeart 18s linear infinite;
+  z-index: 1;
+}
+
+.letter-card::after {
+  content: '💖';
+  position: absolute;
+  bottom: 15%;
+  right: 8%;
+  font-size: clamp(1.8rem, 6vw, 2.2rem);
+  opacity: 0.15;
+  animation: floatHeart 22s linear infinite reverse;
+  z-index: 1;
+}
+
+@keyframes floatHeart {
+  0%   { transform: translateY(0) rotate(0deg); }
+  100% { transform: translateY(-65px) rotate(25deg); }
+}
+
+/* Back Button */
+.back-buttonn {
+  padding: 12px 26px;
+  font-size: clamp(0.92rem, 3.8vw, 1rem);
+  background: rgb(52, 4, 11);
+  color: rgb(208, 72, 229);
+  border: 2px solid rgba(255,255,255,0.35);
+  border-radius: 50px;
+  backdrop-filter: blur(12px);
+  cursor: pointer;
+  transition: 0.3s;
+  margin: 30px auto 50px;
+  display: block;
+  width: fit-content;
+}
+
+/* Right List */
+.right-list {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  margin: 50px auto 0;
+  padding: 0 10px;
+}
+
+.right-list ul {
+  list-style-position: inside;
+  text-align: left;
+  padding-left: 8px;
+}
+
+.Bengali {
+  margin-left: 0;
+  text-align: center;
+}
+
+@media (max-width: 1024px) {
+  .letter-card {
+    margin: 15px 0 60px 0;
+  }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+  .letter-card {
+    max-width: 100%;
+    padding: 25px 20px;
+    border-radius: 22px;
+  }
+
+  .timeline-container {
+    margin: 40px 0;
+    padding: 0 10px;
+  }
+}
+
+/* Main Mobile Phones - Key Layout Change */
+@media (max-width: 480px) {
+  .letter-wrapper {
+    padding: 15px 12px;
+  }
+
+  .letter-card {
+    padding: 24px 18px;
+    border-radius: 20px;
+    margin: 10px 0 45px 0;
+  }
+
+  /* Force vertical stacking: Back button → Letter → List */
+  .love-page {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  /* Make sure the letter content takes full width */
+  .letter-card {
+    width: 100%;
+  }
+
+  /* Right list becomes full width and moves below */
+  .right-list {
+    width: 100%;
+    max-width: 100%;
+    margin: 10px auto 0;
+    padding: 0 5px;
+  }
+
+  .right-list ul {
+    padding-left: 15px;
+  }
+
+  /* Smaller timeline for mobile */
+  .timeline-container {
+    margin: 35px 0;
+    padding: 0 8px;
+    gap: 8px;
+  }
+
+  .timeline-line {
+    left: 16px;
+    right: 16px;
+    top: 23px;
+  }
+
+  .timeline-dot {
+    width: 17px;
+    height: 17px;
+    top: 17px;
+  }
+
+  .timeline-content {
+    padding-top: 60px;
+  }
+
+  /* Floating hearts adjustment */
+  .letter-card::before {
+    top: 9%;
+    left: 5%;
+    font-size: 1.7rem;
+  }
+
+  .letter-card::after {
+    bottom: 13%;
+    right: 7%;
+    font-size: 1.9rem;
+  }
+
+  /* Back button styling for mobile */
+  .back-buttonn {
+    padding: 11px 24px;
+    font-size: 0.95rem;
+    margin: 20px auto 35px;
+  }
+
+  .love-declaration {
+    margin: 20px 0 25px;
+  }
+}
+
+/* Smaller Phones (e.g. iPhone SE, older Androids) */
+@media (max-width: 360px) {
+  .letter-card {
+    padding: 20px 15px;
+  }
+
+  .love-page {
+    gap: 20px;
+  }
+
+  .right-list {
+    margin-top: 5px;
+  }
+
+  .timeline-line {
+    left: 13px;
+    right: 13px;
+  }
+
+  .back-buttonn {
+    margin: 15px auto 30px;
+  }
+}
+
+/* Extra Small Screens */
+@media (max-width: 320px) {
+  .letter-card {
+    padding: 18px 12px;
+  }
+
+  .love-page {
+    gap: 18px;
+  }
+}
